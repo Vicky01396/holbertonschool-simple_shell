@@ -35,12 +35,6 @@ char *findexpath(const char *command, char *path)
 	int i = 1;
 
 	token = tokethis(pathcpy);
-	if (token == NULL)
-	{
-		free(pathcpy);
-		return (NULL);
-	}
-	printf("\n-----------------------------------------------\n");
 	while (token[i] != NULL)
 	{
 		sprintf(commandpath, "%s/%s", token[i], command);
