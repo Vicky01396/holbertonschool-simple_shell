@@ -20,7 +20,6 @@ char **tokethis(char *imp)
 		i++;
 	}
 	countw += 1;
-	printf("\nCantidad de tokens es ---> %d\n", countw);
 	words = malloc((countw + 1) * sizeof(char *));
 	if (words == NULL)
 	{
