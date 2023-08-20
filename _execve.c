@@ -30,7 +30,6 @@ int execve_(char *command, char **args)
 	else
 	{
 		pid = fork(), cmdpath = findexpath(command, pathi);
-		printf("\n-----2----\n");
 		if (pid == 0)
 		{
 			child = getpid();
