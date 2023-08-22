@@ -41,6 +41,7 @@ char *findexpath(const char *command, char *path)
 		if (access(commandpath, X_OK) == 0)
 		{
 			free(pathcpy);
+			free(token);
 			return (strdup(commandpath));
 		}
 		else
@@ -49,6 +50,7 @@ char *findexpath(const char *command, char *path)
 		}
 	}
 	free(pathcpy);
-	free_grid(token);
+	if (token)
+		free_grid(token);
 	return (NULL);
 }
