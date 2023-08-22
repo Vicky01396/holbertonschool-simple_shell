@@ -35,7 +35,7 @@ int execve_(char *command, char **args)
 			child = getpid();
 			if (execve(cmdpath, args, environ) == -1)
 			{
-				fprintf(stderr, "hsh: 1: %s: not found\n", args[0]);
+				fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
 				free(cmdpath);
 				kill(child, SIGTERM);
 			}
