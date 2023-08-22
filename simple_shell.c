@@ -33,6 +33,7 @@ int main(void)
 		{
 			continue;
 		}
+		free(str);
 	}
 	if (str)
 		free_grid(str);
