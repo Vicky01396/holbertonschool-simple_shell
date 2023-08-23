@@ -16,8 +16,8 @@ int main(void)
 		read = getline(&buff, &size, stdin);
 		if (read == -1)
 		{
-			free(buff);
-			exit(1);
+			free(buff)
+			exit(0);
 		}
 		str = tokethis(buff);
 		if (str == NULL || str[0] == NULL)
