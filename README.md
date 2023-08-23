@@ -86,6 +86,6 @@ This function is called in the _execve() function if the command don't have /bin
 * free_grid()
 The function frees the contents of an array of pointers and before terminating it frees the array itself.
 
-## AUTHORS
-* José Moreno  https://github.com/Kratero / joseignaciomorenocamargo000@gmail.com
-* Victoria Coria https://github.com/Vicky01396  / Vicky.c_96@hotmail.com
+## If you need to write to us, here are our contacts
+* José Moreno - joseignaciomorenocamargo000@gmail.com
+* Victoria Coria - Vicky.c_96@hotmail.com
