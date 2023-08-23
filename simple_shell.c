@@ -17,7 +17,7 @@ int main(void)
 		if (read == -1)
 		{
 			free(buff);
-			exit(0);
+			exit(1);
 		}
 		str = tokethis(buff);
 		if (str == NULL || str[0] == NULL)
