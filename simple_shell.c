@@ -22,7 +22,7 @@ int main(void)
 		str = tokethis(buff);
 		if (str == NULL || str[0] == NULL)
 		{
-			free(buff);
+			free(str);
 			continue;
 		}
 		if (strcmp(str[0], "exit") == 0)
