@@ -10,7 +10,7 @@
 int execve_(char *command, char **args)
 {
 	int stado;
-	char *pathi = _get_path("PATH"), *cmdpath;
+	char *pathi = _get_path("PATH="), *cmdpath;
 	pid_t pid;
 	struct stat check;
 
