@@ -50,6 +50,6 @@ char *findexpath(const char *command, char *path)
 		}
 	}
 	free(pathcpy);
-	grid(token);
+	free(token);
 	return (NULL);
 }
