@@ -69,6 +69,7 @@ Also commands whit arguments:
 
 ## Bugs
 Multiple commands cannot be performed on the same line.
+
 Status values returned in certain cases are erroneous.
 
 ## These are some important shell function
