@@ -7,14 +7,21 @@ This code implements a very basic shell that allows command execution on Unix-ba
 ## Flowchart
 ![image](https://user-images.githubusercontent.com/124283901/235261395-c00c5d58-ea75-4337-a7f3-a4b1c5c2fe94.png)
 
-## How it work
+## How it works
 If you want to use this basic Unix command interpreter, the first thing you should do is clone the repository:
+
 How to clone the repository?
+
 * In the terminal run the command git clone next to the url of the repository in github.
+
 After that you should compile with:
+
 * gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
 Placing the previous command in the terminal, the executable hsh will be created, to execute it use:
+
 * ./hsh
+
 Once this is done you will be in the command interpreter, you can use for example the following commands:
 * ls
 ```
@@ -29,6 +36,7 @@ $ pwd
 $
 ```
 * clear
+
 Before clear
 ```
 $ ls
@@ -48,18 +56,20 @@ $
 $ ls
 README.md  _execve.c  _get_path.c  hsh  main.h  simple_shell.c  tkn.c
 $ exit
-Error: No such file or directory
 root@c504d64e290e4ba88c969f38355daadd-2377118072:~/holbertonschool-simple_shell-2#
 ```
 * env (Print all of the environ variables)
+
 Also commands whit arguments:
+
 * touch *filename
 * echo *printext
 * mkdir *arguments *dirname
 * and others
 
 ## Bugs
-The exit command not work.
+Multiple commands cannot be performed on the same line.
+Status values returned in certain cases are erroneous.
 
 ## These are some important shell function
 * simple_shell()
@@ -72,6 +82,8 @@ This function is called when the shell need execute a command, recognize if the 
 This function find the envirion variable called PATH, save and return the PATH variable.
 * findexpath()
 This function is called in the _execve() function if the command don't have /bin, the function find the command called using the PATH, check the permissions of the file and if success return the command path.
+* free_grid()
+The function frees the contents of an array of pointers and before terminating it frees the array itself.
 
 ## AUTHORS
 * José Moreno  https://github.com/Kratero / joseignaciomorenocamargo000@gmail.com
