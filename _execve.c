@@ -9,9 +9,9 @@
 */
 int execve_(char *command, char **args)
 {
-	int stado = 0;
+	int stado;
 	char *pathi = _get_path("PATH"), *cmdpath;
-	pid_t pid, child;
+	pid_t pid;
 	struct stat check;
 
 	if (stat(command, &check) == 0)
@@ -29,22 +29,22 @@ int execve_(char *command, char **args)
 	}
 	else
 	{
-		pid = fork(), cmdpath = findexpath(command, pathi);
-		if (pid == 0)
+		cmdpath = findexpath(command, pathi);
+		if (stat(cmdpath, &check) == 0)
 		{
-			child = getpid();
-			if (execve(cmdpath, args, environ) == -1)
+			pid = fork();
+			if (pid == 0)
 			{
-				fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
-				free(cmdpath);
-				kill(child, SIGTERM);
+				if (execve(cmdpath, args, environ) == -1)
+				{
+					free(cmdpath);
+				}
 			}
+			else
+				free(cmdpath), wait(&stado);
 		}
 		else
-		{
-			free(cmdpath);
-			wait(&stado);
-		}
+			fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
 	}
 	return (WEXITSTATUS(stado));
 }
